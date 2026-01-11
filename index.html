@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elite Bakery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="top-header">
+  <div class="logo">
+    <img src="logo.png" alt="Bakery Logo">
+    <span>Elite Bakery</span>
+  </div>
+  <!-- delivery -->
+  <div class="delivery-location">
+  <span id="delivery-btn">Delivery To 📍</span>
+  <div class="delivery-dropdown">
+    <input type="text" id="location-input" placeholder="Enter city or pincode">
+    <button id="location-submit">Confirm</button>
+    <button id="current-location">Use Current Location 📍</button>
+  </div>
+</div>
+
+<!--search box-->
+  <div class="search-box">
+    <input
+  type="text"
+  id="search-input"
+  placeholder="Search cakes..."
+  class="search-box">
+ </div>
+ <!--search box container-->
+ <div id="search-suggestions" class="search-suggestions"></div>
+ 
+
+  <div class="header-icons">
+    <!--track order button-->
+    <a href="#" id="track-order-link">Track Order</a>
+    <!--track order model-->
+     <div id="track-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="track-close">&times;</span>
+    <h2>Track Order</h2>
+
+    <input type="text" id="track-id" placeholder="Enter Order / Track ID">
+    <input type="text" id="track-contact" placeholder="Mobile Number or Email">
+
+    <button id="track-btn">Track Order</button>
+
+    <div id="track-result" style="display:none; margin-top:15px;">
+      <p><strong>Status:</strong> <span id="track-status"></span></p>
+    </div>
+  </div>
+</div>
+    <!--cart button html-->
+    <!-- CART LINK -->
+<a href="#" id="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+
+<!-- CART MODAL -->
+<div id="cart-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="cart-close">&times;</span>
+    <h2>Your Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <h3>Total: ₹<span id="cart-total">0</span></h3>
+    <button id="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+
+    <!--signup logi button-->
+    <!-- Navbar Login/Signup Button -->
+<a href="#" id="login-link">Login / Signup</a>
+
+<!-- Modal -->
+<div id="auth-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="auth-close">&times;</span>
+    <h2>Login / Signup</h2>
+
+    <!-- Tabs inside modal -->
+    <div class="auth-tabs">
+      <button class="tab-btn active" data-tab="otp-tab">Mobile OTP</button>
+      <button class="tab-btn" data-tab="gmail-tab">Gmail</button>
+    </div>
+
+    <!-- Mobile OTP -->
+    <div class="tab-content" id="otp-tab">
+      <input type="text" id="mobile-number" placeholder="Enter mobile number">
+      <button id="send-otp">Send OTP</button>
+      <input type="text" id="otp-input" placeholder="Enter OTP">
+      <button id="verify-otp">Verify OTP</button>
+    </div>
+
+    <!-- Gmail Login -->
+    <div class="tab-content" id="gmail-tab" style="display:none;">
+      <button id="gmail-login">Login with Gmail</button>
+    </div>
+  </div>
+</div>
+
+  </div>
+</header>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="category-navbar">
+  <div class="nav-left">
+
+    <!-- Cakes -->
+    <div class="nav-item menu-item">
+      <span>Cakes</span>
+      <div class="dropdown">
+        <a href="#">Trending Cakes</a>
+        <a href="#">Ribbon Cakes</a>
+        <a href="#">Fresh Drops</a>
+        <a href="#">Gourmet Cakes</a>
+        <a href="#">Bento Cakes</a>
+      </div>
+    </div>
+
+    <!-- Theme Cakes -->
+    <div class="nav-item menu-item">
+      <span>Theme Cakes</span>
+      <div class="dropdown">
+        <a href="#">Birthday Cakes</a>
+        <a href="#">Anniversary Cakes</a>
+        <a href="#">Customized Cakes</a>
+      </div>
+    </div>
+
+    <!-- By Relationship -->
+    <div class="nav-item menu-item">
+      <span>By Relationship</span>
+      <div class="dropdown">
+        <a href="#">For Friends</a>
+        <a href="#">For Parents</a>
+        <a href="#">For Loved Ones</a>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="nav-item menu-item">
+      <span>Desserts</span>
+      <div class="dropdown">
+        <a href="#">Cookies</a>
+        <a href="#">Brownies</a>
+      </div>
+    </div>
+
+    <!-- Birthday -->
+    <div class="nav-item"><span>Birthday</span>
+      <div class="dropdown">
+        <a href="#">Birthday Cakes</a>
+        <a href="#">Anniversary Cakes</a>
+        <a href="#">Customized Cakes</a>
+      </div>
+    </div>
+
+    <!-- Hampers -->
+    <div class="nav-item"><span>Hampers</span>
+    <div class="dropdown">
+        <a href="#">Birthday Cakes</a>
+        <a href="#">Anniversary Cakes</a>
+        <a href="#">Customized Cakes</a>
+      </div>
+    </div>
+
+    <!-- New -->
+    <div class="nav-item new"><span>New</span>
+    <div class="dropdown">
+        <a href="#">Birthday Cakes</a>
+        <a href="#">Anniversary Cakes</a>
+        <a href="#">Customized Cakes</a>
+      </div>
+    </div>
+
+    <!-- Anniversary -->
+    <div class="nav-item"><span>Anniversary</span>
+    <div class="dropdown">
+        <a href="#">Birthday Cakes</a>
+        <a href="#">Anniversary Cakes</a>
+        <a href="#">Customized Cakes</a>
+      </div>
+    </div>
+
+    <!-- Occasions -->
+    <div class="nav-item"><span>Occasions</span>
+    <div class="dropdown">
+        <a href="#">Birthday Cakes</a>
+        <a href="#">Anniversary Cakes</a>
+        <a href="#">Customized Cakes</a>
+      </div>
+    </div>
+
+    <!-- Customized Cakes -->
+    <div class="nav-item"><span>Customized Cakes</span>
+    <div class="dropdown">
+        <a href="#">Birthday Cakes</a>
+        <a href="#">Anniversary Cakes</a>
+        <a href="#">Customized Cakes</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<!-- hero-->
+ <section id="home" class="hero">
+  <h1>Good Mood Starts with Good Food</h1>
+  <p>Freshly baked with love ❤️</p>
+</section>
+<!--====slider section====-->
+<!-- ===== SINGLE IMAGE AUTO SLIDER ===== -->
+<section class="single-slider">
+  <div class="single-slider-wrapper">
+    <img src="images/slide1.png" class="single-slide active">
+    <img src="images/slide2.jpg" class="single-slide">
+    <img src="images/slide3.jpg" class="single-slide">
+    <img src="images/slide4.jpg" class="single-slide">
+    <img src="images/slide5.png" class="single-slide">
+  </div>
+</section>
+
+
+<!-- ===== PRODUCTS ===== -->
+<section id="products" class="products">
+ <section class="product-section">
+  <h2>Trending Cakes ⭐</h2>
+
+  <div class="product-grid">
+
+    <div class="product-card"  data-name="chocolate cake">
+      <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
+      <h3>Chocolate Cake</h3>
+      <p>₹599</p>
+      <button onclick="addToCart('Chocolate Cake',499,'images/chocolate-cake.jpg')">
+Add to Cart
+</button>
+
+    </div>
+
+    <div class="product-card"  data-name="chocolate cake">
+      <img src="images/bento-cake.jpg" alt="Bento Cake">
+      <h3>Bento Cake</h3>
+      <p>₹399</p>
+      <button onclick="addToCart('Bento Cake', 399)">Add to Cart</button>
+    </div>
+
+    <div class="product-card"  data-name="chocolate cake">
+      <img src="images/pinata-cake.jpg" alt="Pinata Cake">
+      <h3>Pinata Cake</h3>
+      <p>₹899</p>
+      <button onclick="addToCart('Pinata Cake', 899)">Add to Cart</button>
+    </div>
+      <div class="product-card"  data-name="chocolate cake">
+      <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
+      <h3>Chocolate Cake</h3>
+      <p>₹599</p>
+      <button onclick="addToCart('Chocolate Cake', 599)">Add to Cart</button>
+    </div>
+
+    <div class="product-card"  data-name="chocolate cake">
+      <img src="images/bento-cake.jpg" alt="Bento Cake">
+      <h3>Bento Cake</h3>
+      <p>₹399</p>
+      <button onclick="addToCart('Bento Cake', 399)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/pinata-cake.jpg" alt="Pinata Cake">
+      <h3>Pinata Cake</h3>
+      <p>₹899</p>
+      <button onclick="addToCart('Pinata Cake', 899)">Add to Cart</button>
+    </div>
+           <div class="product-card">
+      <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
+      <h3>Chocolate Cake</h3>
+      <p>₹599</p>
+      <button onclick="addToCart('Chocolate Cake', 599)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/bento-cake.jpg" alt="Bento Cake">
+      <h3>Bento Cake</h3>
+      <p>₹399</p>
+      <button onclick="addToCart('Bento Cake', 399)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/pinata-cake.jpg" alt="Pinata Cake">
+      <h3>Pinata Cake</h3>
+      <p>₹899</p>
+      <button onclick="addToCart('Pinata Cake', 899)">Add to Cart</button>
+    </div>
+      <div class="product-card">
+      <img src="images/chocolate-cake.jpg" alt="Chocolate Cake">
+      <h3>Chocolate Cake</h3>
+      <p>₹599</p>
+      <button onclick="addToCart('Chocolate Cake', 599)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/bento-cake.jpg" alt="Bento Cake">
+      <h3>Bento Cake</h3>
+      <p>₹399</p>
+      <button onclick="addToCart('Bento Cake', 399)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/pinata-cake.jpg" alt="Pinata Cake">
+      <h3>Pinata Cake</h3>
+      <p>₹899</p>
+      <button onclick="addToCart('Pinata Cake', 899)">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="about">
+  <h2>About Us</h2>
+  <p>We bake fresh cakes daily using premium ingredients.</p>
+</section>
+
+<!-- ===== CONTACT ===== -->
+ <!-- Modal HTML -->
+<div id="auth-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="auth-close">&times;</span>
+    <h2>Login / Signup</h2>
+
+    <!-- Mobile OTP -->
+    <input type="text" id="mobile-number" placeholder="Enter mobile number">
+    <button id="send-otp">Send OTP</button>
+    <input type="text" id="otp-input" placeholder="Enter OTP">
+    <button id="verify-otp">Verify OTP</button>
+
+    <hr>
+
+    <!-- Gmail Login -->
+    <button id="gmail-login">Login with Gmail</button>
+  </div>
+</div>
+
+<!-- ===== BAKINGO STYLE FOOTER ===== -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h3>Elite Bakery</h3>
+      <p>Fresh cakes, desserts & hampers delivered with love.  
+      Making every moment sweet ❤️</p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h4>Our Products</h4>
+      <ul>
+        <li>Cakes</li>
+        <li>Theme Cakes</li>
+        <li>Birthday Cakes</li>
+        <li>Anniversary Cakes</li>
+        <li>Customized Cakes</li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h4>Useful Links</h4>
+      <ul>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li>Track Order</li>
+        <li >Login / Signup</li>
+        <li>Cart</li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h4>Help & Support</h4>
+      <ul>
+        <li>FAQs</li>
+        <li>Delivery Information</li>
+        <li>Refund Policy</li>
+        <li>Privacy Policy</li>
+        <li>Terms & Conditions</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Social -->
+  <div class="footer-social">
+    <span>Follow Us:</span>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    © 2026 Elite Bakery. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

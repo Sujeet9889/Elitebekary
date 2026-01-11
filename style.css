@@ -1,0 +1,628 @@
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#fff8f0;
+}
+
+/* Header */
+.top-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 20px;
+  background:#4b2e2e;
+  color:white;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.logo img{
+  width:40px;
+}
+ /*  delevery css*/
+ .delivery-location {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#delivery-btn {
+  font-weight: bold;
+  padding: 5px 10px;
+  background:#4b2e2e;
+  border-radius: 5px;
+}
+
+.delivery-dropdown {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 220px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 10000;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.delivery-dropdown input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.delivery-dropdown button {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  background:#c97c2d;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+.search-box input{
+  padding:6px;
+  border-radius:4px;
+  border:none;
+  width:200px;
+}
+/* signup logi*/
+#login-link {
+  padding: 8px 15px;
+  background:#4b2e2e;
+  color:#fff;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+  transition: background 0.3s;
+}
+#login-link:hover { background:#b06622; }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background:#fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius:8px;
+  width: 300px;
+  text-align:center;
+  position:relative;
+}
+
+.modal .close {
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:20px;
+  cursor:pointer;
+}
+
+.modal input {
+  width:90%;
+  padding:8px;
+  margin:8px 0;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+.modal button {
+  width:95%;
+  padding:8px;
+  margin-top:5px;
+  background:#c97c2d;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.modal button:hover { background:#b06622; }
+
+/* Tabs */
+.auth-tabs {
+  display:flex;
+  justify-content: space-around;
+  margin-bottom:15px;
+}
+.tab-btn {
+  padding: 5px 10px;
+  border:none;
+  background:#eee;
+  cursor:pointer;
+  border-radius:5px;
+  font-weight:bold;
+}
+.tab-btn.active { background:#c97c2d; color:#fff; }
+.tab-content { display:block; }
+
+/*     */
+.header-icons a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* Navbar */
+.navbar{
+  background:#8b5a2b;
+  padding:10px;
+  text-align:center;
+}
+
+.navbar a{
+  color:white;
+  margin:15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* Sections */
+.hero{
+  padding:60px;
+  text-align:center;
+  background:#f5e1c8;
+}
+
+.products, .about, .contact{
+  padding:40px;
+  text-align:center;
+}
+
+.card{
+  display:inline-block;
+  background:white;
+  padding:20px;
+  margin:10px;
+  width:200px;
+  border-radius:10px;
+  box-shadow:0 0 10px #ccc;
+}
+
+footer{
+  background:#4b2e2e;
+  color:white;
+  text-align:center;
+  padding:10px;
+}
+.category-navbar{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap:18px;
+  padding:12px;
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  overflow-x:auto;
+}
+
+.category-navbar a{
+  text-decoration:none;
+  color:#4b2e2e;
+  font-size:14px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+.category-navbar a:hover{
+  color:#c97c2d;
+}
+
+.category-navbar .new{
+  color:red;
+  font-weight:bold;
+}
+.product-section{
+  padding:40px;
+  background:#fff8f0;
+}
+
+.product-section h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#4b2e2e;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:20px;
+}
+
+.product-card{
+  background:#fff;
+  border-radius:12px;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.product-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.product-card h3{
+  margin:10px 0 5px;
+}
+
+.product-card p{
+  font-weight:bold;
+  color:#c97c2d;
+}
+
+.product-card button{
+  background:#4b2e2e;
+  color:white;
+  border:none;
+  padding:10px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.product-card button:hover{
+  background:#8b5a2b;
+}
+.single-slider{
+  width:100%;
+  height:320px;
+  overflow:hidden;
+  position:relative;
+}
+
+.single-slider-wrapper{
+  width:100%;
+  height:100%;
+  position:relative;
+}
+
+.single-slide{
+  position:absolute;
+  top:0;
+  left:100%;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 1s ease-in-out;
+  transform:translateX(0);
+}
+
+.single-slide.active{
+  transform:translateX(-100%);
+}
+
+.footer{
+  background:#3b1f1f;
+  color:#fff;
+  padding-top:40px;
+  font-size:14px;
+}
+
+.footer-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:30px;
+  padding:0 40px;
+}
+
+.footer-col h3,
+.footer-col h4{
+  margin-bottom:15px;
+  color:#f5d7a1;
+}
+
+.footer-col ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-col ul li{
+  margin-bottom:8px;
+  cursor:pointer;
+}
+
+.footer-col ul li:hover{
+  text-decoration:underline;
+}
+
+.footer-social{
+  text-align:center;
+  padding:20px;
+  border-top:1px solid rgba(255,255,255,0.2);
+}
+
+.footer-social a{
+  color:#f5d7a1;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.footer-bottom{
+  text-align:center;
+  padding:15px;
+  background:#2a1414;
+  font-size:13px;
+}
+
+/* Navbar container */
+.category-navbar{
+  position: relative;
+  width: 100%;
+  background:#fff;
+  z-index: 9999; /* top layer */
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Menu items */
+.nav-item{
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  color:#3b1f1f;
+}
+
+.nav-item:hover{
+  color:#c97c2d;
+}
+
+.nav-item.new{
+  color:#d32f2f;
+}
+
+/* Dropdown container */
+.dropdown{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #ccc;
+  z-index: 10000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 10px 0;
+}
+
+/* Dropdown links */
+.dropdown a{
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color:#3b1f1f;
+  font-size:14px;
+}
+
+.dropdown a:hover{
+  background:#f5e1c8;
+  color:#c97c2d;
+}
+
+/* Show dropdown on hover */
+.menu-item:hover .dropdown{
+  display: block;
+}
+
+/* Scrollbar hide for nav */
+.category-navbar::-webkit-scrollbar{
+  display: none;
+}
+
+/* Hero overlay safety */
+.hero, section, .slider{
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* Navbar container */
+.category-navbar {
+  position: relative;  /* relative zaruri hai dropdown ke liye */
+  z-index: 9999;       /* top layer */
+  width: 100%;
+  background: #fff;
+  display: flex;
+  padding: 10px 20px;
+  overflow: visible;   /* 📌 ye bahut important hai! */
+}
+
+/* Menu items */
+.nav-item {
+  position: relative;  /* dropdown ke liye relative */
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Dropdown */
+.dropdown {
+  display: none;
+  position: absolute;  /* absolute parent ke relative */
+  top: 100%;           /* navbar ke neeche appear ho */
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #ccc;
+  z-index: 10000;      /* hamesha sab ke upar */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #3b1f1f;
+}
+
+.dropdown a:hover {
+  background: #f5e1c8;
+  color: #c97c2d;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  z-index: 1;           /* hero ke liye safe */
+  padding-top: 80px;    /* navbar height ke liye */
+}
+/* cart item css*/
+/* CART MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
+}
+
+.modal-content{
+  background:#fff;
+  width:320px;
+  padding:20px;
+  border-radius:8px;
+
+  position: fixed;              /* 🔥 important */
+  top:30%;
+  left:50%;
+  transform: translate(-50%, -50%);
+
+  color:#333;
+  max-height: 90vh;              /* 🔥 small screens safe */
+  overflow-y: auto;
+}
+
+
+.close{
+  float:right;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* CART ITEMS */
+#cart-items{
+  margin:15px 0;
+  color:#000;
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#f9f9f9;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:6px;
+}
+
+.cart-item button{
+  background:none;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+}
+/* image fetching in cart css*/
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#f9f9f9;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:6px;
+}
+
+.cart-img{
+  width:60px;
+  height:60px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+.cart-info{
+  flex:1;
+  color:#000;
+}
+/*tracker order and cart link hover*/
+#cart-link:hover,
+#track-order-link:hover,
+#delivery-btn:hover{
+  background-color: #d2691e;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* search box css*/
+.search-box{
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+/* search box container*/
+.search-suggestions{
+  position: absolute;
+  background: #fff;
+  width: 250px; /* adjust as needed */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 250px;
+  overflow-y: auto;
+  display: none; /* hidden by default */
+  z-index: 1000;
+}
+
+.search-suggestion-item{
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.search-suggestion-item img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.search-suggestion-item:hover{
+  background-color: #f2f2f2;
+}
